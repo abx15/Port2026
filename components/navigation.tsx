@@ -1,9 +1,11 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { useState, useEffect } from "react"
-import { Menu, X } from "lucide-react"
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+import Logo from "@/public/icon/Logo26Port.png";
+import Image from "next/image";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -11,31 +13,40 @@ const navLinks = [
   { href: "/about", label: "About" },
   { href: "/achievements", label: "Achievements" },
   { href: "/contact", label: "Contact" },
-]
+];
 
 export function Navigation() {
-  const pathname = usePathname()
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const pathname = usePathname();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/95 backdrop-blur-md border-b border-border" : "bg-transparent"
+        isScrolled
+          ? "bg-background/95 backdrop-blur-md border-b border-border"
+          : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-20">
-          <Link href="/" className="text-xl font-bold text-foreground hover:text-primary transition-colors">
-            Arun Kumar
+          <Link href="/" className="flex items-center h-full">
+            <Image
+              src={Logo}
+              alt="Logo"
+              width={140}
+              height={70}
+              className="object-contain transition-transform duration-300 hover:scale-105"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -45,7 +56,9 @@ export function Navigation() {
                 key={link.href}
                 href={link.href}
                 className={`text-sm font-medium transition-colors hover:text-primary ${
-                  pathname === link.href ? "text-primary" : "text-muted-foreground"
+                  pathname === link.href
+                    ? "text-primary"
+                    : "text-muted-foreground"
                 }`}
               >
                 {link.label}
@@ -73,7 +86,9 @@ export function Navigation() {
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`text-sm font-medium transition-colors hover:text-primary ${
-                    pathname === link.href ? "text-primary" : "text-muted-foreground"
+                    pathname === link.href
+                      ? "text-primary"
+                      : "text-muted-foreground"
                   }`}
                 >
                   {link.label}
@@ -84,5 +99,5 @@ export function Navigation() {
         )}
       </div>
     </nav>
-  )
+  );
 }
