@@ -48,47 +48,47 @@ const interactiveLinks = [
 ];
 
 const stats = [
-  { label: "Years Experience", value: "4+" },
-  { label: "Projects Completed", value: "50+" },
+  { label: "Years Experience", value: "2+" },
+  { label: "Projects Completed", value: "30+" },
   { label: "Technologies", value: "15+" },
 ];
 
 const featuredProjects = [
   {
-    title: "E-Commerce Platform",
+    title: "Real State ",
     description:
       "A modern e-commerce solution with real-time inventory management, secure payment processing, and an intuitive admin dashboard.",
     tech: ["React", "Node.js", "MongoDB", "Stripe"],
-    demo: "#",
-    github: "#",
-    image: "/modern-ecommerce-platform-interface-dashboard.jpg",
+    demo: "https://realstatewebpage.vercel.app/",
+    github: "https://github.com/abx15/Real-State-website",
+    image: "/projects/corp.png",
   },
   {
-    title: "Task Management App",
+    title: "Zenvexia Solutions App",
     description:
       "Collaborative task manager with real-time updates, drag-and-drop interface, and team workflow management.",
     tech: ["React", "TypeScript", "Firebase", "Tailwind"],
-    demo: "#",
-    github: "#",
-    image: "/project2.png",
+    demo: "https://zenvexiasolutions.netlify.app/",
+    github: "https://github.com/abx15/Zenvexia-solutions",
+    image: "/projects/Zve.png",
   },
   {
     title: "Analytics Dashboard",
     description:
       "Interactive data visualization dashboard with customizable charts, real-time metrics, and comprehensive reporting.",
-    tech: ["React", "D3.js", "Express", "PostgreSQL"],
-    demo: "#",
-    github: "#",
-    image: "/analytics-dashboard.png",
+    tech: ["React", "chart.js", "Express", "Eslint"],
+    demo: "https://workforcehr.netlify.app/dashboard",
+    github: "https://github.com/abx15/HR-management",
+    image: "/projects/dashboard.png",
   },
   {
-    title: "Recipe Finder App",
+    title: "Cafe Page App",
     description:
       "Recipe discovery platform with advanced filters, meal planning features, and nutritional information tracking.",
     tech: ["React", "Next.js", "API Integration", "Tailwind"],
-    demo: "#",
-    github: "#",
-    image: "/recipe-finder-app-interface-with-food-images.jpg",
+    demo: "https://artisan-cafe-prj.vercel.app/",
+    github: "https://github.com/abx15/Artisan-Cafe",
+    image: "/projects/cafe.png",
   },
 ];
 
