@@ -83,7 +83,7 @@ export default function AboutPage() {
               <div className="relative group">
                 <div className="absolute -inset-4 bg-primary/20 rounded-2xl blur-2xl group-hover:blur-3xl transition-all duration-500" />
                 <img
-                  src="/professional-developer-portrait.png"
+                  src="/team/Arun.jpeg"
                   alt="About Me"
                   className="relative rounded-2xl shadow-2xl w-full h-[500px] object-cover group-hover:scale-105 transition-transform duration-500"
                 />
