@@ -21,9 +21,7 @@ export function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -38,13 +36,14 @@ export function Navigation() {
     >
       <div className="container mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-20">
+          {/* Logo */}
           <Link href="/" className="flex items-center h-full">
             <Image
               src={Logo}
               alt="Logo"
-              width={140}
-              height={70}
-              className="object-contain transition-transform duration-300 hover:scale-105"
+              width={120} // Mobile aur desktop responsive ke liye chhota rakha
+              height={50}
+              className="object-contain md:w-[140px] md:h-[60px] transition-transform duration-300 hover:scale-105"
               priority
             />
           </Link>
@@ -72,20 +71,20 @@ export function Navigation() {
             className="md:hidden text-foreground hover:text-primary transition-colors"
             aria-label="Toggle menu"
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-6 border-t border-border">
-            <div className="flex flex-col gap-4">
+          <div className="md:hidden py-6 border-t border-border bg-background/95 backdrop-blur-md">
+            <div className="flex flex-col gap-5 text-center">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`text-sm font-medium transition-colors hover:text-primary ${
+                  className={`text-base font-semibold transition-colors hover:text-primary ${
                     pathname === link.href
                       ? "text-primary"
                       : "text-muted-foreground"
