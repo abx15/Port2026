@@ -1,12 +1,21 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { ArrowRight, Code2, Palette, Smartphone, ExternalLink, Github, Briefcase, Award, Users } from "lucide-react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import React from "@/public/icon/react.png"
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  ArrowRight,
+  Code2,
+  Palette,
+  Smartphone,
+  ExternalLink,
+  Github,
+  Briefcase,
+  Award,
+  Users,
+} from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 
 const interactiveLinks = [
   {
@@ -36,13 +45,13 @@ const interactiveLinks = [
     image: "/developer-testing-mobile-app-interface-on-smartpho.jpg",
     bgImage: "/bg-app-interfaces.jpg",
   },
-]
+];
 
 const stats = [
   { label: "Years Experience", value: "4+" },
   { label: "Projects Completed", value: "50+" },
   { label: "Technologies", value: "15+" },
-]
+];
 
 const featuredProjects = [
   {
@@ -81,7 +90,7 @@ const featuredProjects = [
     github: "#",
     image: "/recipe-finder-app-interface-with-food-images.jpg",
   },
-]
+];
 
 const skillsData = {
   frontend: [
@@ -95,7 +104,6 @@ const skillsData = {
     { name: "Redux", icon: "/icon/redux.webp" },
     { name: "Bootstrap", icon: "/icon/bootstrap.png" },
     { name: "GSAP", icon: "/icon/gsap.png" },
-
   ],
   backend: [
     { name: "Node.js", icon: "/icon/nodeJs26.png" },
@@ -114,22 +122,24 @@ const skillsData = {
     { name: "Firebase", icon: "/icon/firebase.png" },
     { name: "Appwrite", icon: "/icon/appwrite.png" },
   ],
-}
+};
 
 export default function HomePage() {
-  const [activeLink, setActiveLink] = useState<string>("web-dev")
-  const [currentBgIndex, setCurrentBgIndex] = useState(0)
+  const [activeLink, setActiveLink] = useState<string>("web-dev");
+  const [currentBgIndex, setCurrentBgIndex] = useState(0);
 
-  const activeItem = interactiveLinks.find((link) => link.id === activeLink)
+  const activeItem = interactiveLinks.find((link) => link.id === activeLink);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentBgIndex((prev) => (prev + 1) % interactiveLinks.length)
-      setActiveLink(interactiveLinks[(currentBgIndex + 1) % interactiveLinks.length].id)
-    }, 4000)
+      setCurrentBgIndex((prev) => (prev + 1) % interactiveLinks.length);
+      setActiveLink(
+        interactiveLinks[(currentBgIndex + 1) % interactiveLinks.length].id
+      );
+    }, 4000);
 
-    return () => clearInterval(interval)
-  }, [currentBgIndex])
+    return () => clearInterval(interval);
+  }, [currentBgIndex]);
 
   return (
     <div className="pt-20">
@@ -144,28 +154,35 @@ export default function HomePage() {
             className="space-y-10"
           >
             <div className="space-y-6">
-              <p className="text-primary font-semibold text-lg tracking-wide">Hi, I'm Arun Kumar</p>
+              <p className="text-primary font-semibold text-lg tracking-wide">
+                Hi, I'm Arun Kumar
+              </p>
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight text-balance">
                 FRONTEND & FULL STACK
                 <br />
                 <span className="text-muted-foreground">WEB DEVELOPER</span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed max-w-xl">
-                Building modern, scalable, and user-focused web applications with clean code and intuitive design.
+                Building modern, scalable, and user-focused web applications
+                with clean code and intuitive design.
               </p>
             </div>
 
             {/* Interactive Links */}
             <div className="space-y-4">
-              <p className="text-sm font-medium text-muted-foreground uppercase tracking-wider">What I Do</p>
+              <p className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
+                What I Do
+              </p>
               {interactiveLinks.map((link) => {
-                const Icon = link.icon
+                const Icon = link.icon;
                 return (
                   <button
                     key={link.id}
                     onMouseEnter={() => setActiveLink(link.id)}
                     className={`group flex items-center gap-3 text-lg font-semibold transition-all duration-300 ${
-                      activeLink === link.id ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                      activeLink === link.id
+                        ? "text-primary"
+                        : "text-muted-foreground hover:text-foreground"
                     }`}
                   >
                     <Icon size={22} />
@@ -173,11 +190,13 @@ export default function HomePage() {
                     <ArrowRight
                       size={20}
                       className={`transition-transform duration-300 ${
-                        activeLink === link.id ? "translate-x-2" : "group-hover:translate-x-1"
+                        activeLink === link.id
+                          ? "translate-x-2"
+                          : "group-hover:translate-x-1"
                       }`}
                     />
                   </button>
-                )
+                );
               })}
             </div>
 
@@ -208,7 +227,10 @@ export default function HomePage() {
                 className="absolute left-0 top-1/2 -translate-y-1/2 w-[280px] h-[420px] lg:w-[320px] lg:h-[480px] rounded-3xl -z-10 -rotate-12 overflow-hidden"
               >
                 <img
-                  src={interactiveLinks[currentBgIndex].bgImage || "/placeholder.svg"}
+                  src={
+                    interactiveLinks[currentBgIndex].bgImage ||
+                    "/placeholder.svg"
+                  }
                   alt="Background"
                   className="w-full h-full object-cover opacity-80"
                 />
@@ -229,7 +251,10 @@ export default function HomePage() {
                   className="absolute inset-0 rounded-3xl overflow-hidden shadow-2xl border-8 border-background"
                 >
                   <img
-                    src={interactiveLinks[currentBgIndex].image || "/placeholder.svg"}
+                    src={
+                      interactiveLinks[currentBgIndex].image ||
+                      "/placeholder.svg"
+                    }
                     alt={`${interactiveLinks[currentBgIndex].label}`}
                     className="w-full h-full object-cover"
                   />
@@ -253,8 +278,12 @@ export default function HomePage() {
                 transition={{ delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="text-6xl lg:text-7xl font-bold text-primary mb-3">{stat.value}</div>
-                <div className="text-muted-foreground font-semibold text-lg">{stat.label}</div>
+                <div className="text-6xl lg:text-7xl font-bold text-primary mb-3">
+                  {stat.value}
+                </div>
+                <div className="text-muted-foreground font-semibold text-lg">
+                  {stat.label}
+                </div>
               </motion.div>
             ))}
           </div>
@@ -269,7 +298,9 @@ export default function HomePage() {
           viewport={{ once: true }}
           className="mb-20"
         >
-          <h2 className="text-4xl lg:text-6xl font-bold mb-6">Featured Projects</h2>
+          <h2 className="text-4xl lg:text-6xl font-bold mb-6">
+            Featured Projects
+          </h2>
           <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed">
             Recent work showcasing modern web development
           </p>
@@ -297,7 +328,9 @@ export default function HomePage() {
                   <h3 className="text-2xl lg:text-3xl font-bold mb-4 group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed mb-8 flex-grow text-lg">{project.description}</p>
+                  <p className="text-muted-foreground leading-relaxed mb-8 flex-grow text-lg">
+                    {project.description}
+                  </p>
 
                   {/* Tech Stack */}
                   <div className="flex flex-wrap gap-2 mb-8">
@@ -313,7 +346,12 @@ export default function HomePage() {
 
                   {/* Links */}
                   <div className="flex gap-4">
-                    <Button asChild variant="default" size="lg" className="flex-1">
+                    <Button
+                      asChild
+                      variant="default"
+                      size="lg"
+                      className="flex-1"
+                    >
                       <a
                         href={project.demo}
                         target="_blank"
@@ -324,7 +362,12 @@ export default function HomePage() {
                         Live Demo
                       </a>
                     </Button>
-                    <Button asChild variant="outline" size="lg" className="flex-1 bg-transparent">
+                    <Button
+                      asChild
+                      variant="outline"
+                      size="lg"
+                      className="flex-1 bg-transparent"
+                    >
                       <a
                         href={project.github}
                         target="_blank"
@@ -348,10 +391,18 @@ export default function HomePage() {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <Button asChild size="lg" variant="outline" className="group bg-transparent text-lg px-8 py-6">
+          <Button
+            asChild
+            size="lg"
+            variant="outline"
+            className="group bg-transparent text-lg px-8 py-6"
+          >
             <Link href="/projects">
               See All Projects
-              <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform" size={20} />
+              <ArrowRight
+                className="ml-2 group-hover:translate-x-2 transition-transform"
+                size={20}
+              />
             </Link>
           </Button>
         </motion.div>
@@ -366,7 +417,9 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <h2 className="text-4xl lg:text-6xl font-bold mb-6">Skills & Technologies</h2>
+            <h2 className="text-4xl lg:text-6xl font-bold mb-6">
+              Skills & Technologies
+            </h2>
             <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
               A comprehensive toolkit for building modern web applications
             </p>
@@ -379,7 +432,9 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h3 className="text-2xl lg:text-3xl font-bold mb-8 text-center">Frontend Development</h3>
+            <h3 className="text-2xl lg:text-3xl font-bold mb-8 text-center">
+              Frontend Development
+            </h3>
             <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-6 lg:gap-8">
               {skillsData.frontend.map((skill, index) => (
                 <motion.div
@@ -413,7 +468,9 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h3 className="text-2xl lg:text-3xl font-bold mb-8 text-center">Backend Development</h3>
+            <h3 className="text-2xl lg:text-3xl font-bold mb-8 text-center">
+              Backend Development
+            </h3>
             <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 lg:gap-8 max-w-4xl mx-auto">
               {skillsData.backend.map((skill, index) => (
                 <motion.div
@@ -441,8 +498,14 @@ export default function HomePage() {
           </motion.div>
 
           {/* Tools & Technologies */}
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h3 className="text-2xl lg:text-3xl font-bold mb-8 text-center">Tools & Technologies</h3>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-2xl lg:text-3xl font-bold mb-8 text-center">
+              Tools & Technologies
+            </h3>
             <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 lg:gap-8 max-w-4xl mx-auto">
               {skillsData.tools.map((skill, index) => (
                 <motion.div
@@ -479,9 +542,12 @@ export default function HomePage() {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl lg:text-6xl font-bold mb-6">Why Work With Me?</h2>
+          <h2 className="text-4xl lg:text-6xl font-bold mb-6">
+            Why Work With Me?
+          </h2>
           <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-            I bring a unique blend of technical expertise and creative problem-solving to every project
+            I bring a unique blend of technical expertise and creative
+            problem-solving to every project
           </p>
         </motion.div>
 
@@ -498,8 +564,9 @@ export default function HomePage() {
               </div>
               <h3 className="text-2xl font-bold mb-4">Professional Approach</h3>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Clean, maintainable code following industry best practices. Timely delivery with clear communication
-                throughout the development process.
+                Clean, maintainable code following industry best practices.
+                Timely delivery with clear communication throughout the
+                development process.
               </p>
             </Card>
           </motion.div>
@@ -516,8 +583,8 @@ export default function HomePage() {
               </div>
               <h3 className="text-2xl font-bold mb-4">Quality Focused</h3>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Attention to detail in every pixel and line of code. Rigorous testing ensures reliable, bug-free
-                applications that users love.
+                Attention to detail in every pixel and line of code. Rigorous
+                testing ensures reliable, bug-free applications that users love.
               </p>
             </Card>
           </motion.div>
@@ -534,8 +601,9 @@ export default function HomePage() {
               </div>
               <h3 className="text-2xl font-bold mb-4">User-Centric Design</h3>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Building interfaces that users find intuitive and enjoyable. Every design decision is made with the end
-                user experience in mind.
+                Building interfaces that users find intuitive and enjoyable.
+                Every design decision is made with the end user experience in
+                mind.
               </p>
             </Card>
           </motion.div>
@@ -551,7 +619,9 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <h2 className="text-4xl lg:text-6xl font-bold mb-6">Meet Our Team</h2>
+            <h2 className="text-4xl lg:text-6xl font-bold mb-6">
+              Meet Our Team
+            </h2>
             <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed">
               Talented professionals working together to deliver excellence
             </p>
@@ -560,28 +630,30 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-8 lg:gap-12 max-w-6xl mx-auto">
             {[
               {
-                name: "Arun Kumar",
+                name: "Arun Kumar Bind",
                 role: "Frontend & Full Stack Developer",
-                image: "/professional-developer-portrait.png",
-                description: "Specializes in building modern web applications with React, Next.js, and Node.js",
-                linkedin: "https://linkedin.com/in/arunkumar",
-                email: "arun.kumar@example.com",
+                image: "/team/Arun.jpeg",
+                description:
+                  "Builds modern full-stack applications using PHP and the MERN stack, focusing on React-based frontends and robust Node.js backends.",
+                linkedin: "https://www.linkedin.com/in/arun-kumar-a3b047353/",
+                email: "developerarunwork@gmail.com",
               },
               {
-                name: "Priya Sharma",
+                name: "Amit Kumar Bind",
                 role: "HR & Marketing Specialist",
-                image: "/professional-hr-marketing-specialist-portrait.jpg",
-                description: "Expert in talent acquisition, branding, and digital marketing strategies",
-                linkedin: "https://linkedin.com/in/priyasharma",
-                email: "priya.sharma@example.com",
+                image: "/team/Amit.jpeg",
+                description:
+                  "Marketing-driven HR professional with expertise in recruitment, brand positioning, and digital outreach strategies.",
+                linkedin: "https://www.linkedin.com/in/amitkumarbind07/",
+                email: "amitkumarbind07069@gmail.com",
               },
               {
-                name: "Raj Patel",
+                name: "Rajan Yadav",
                 role: "Graphic Designer & Video Editor",
-                image: "/graphic-designer-portrait.png",
-                description: "Creates stunning visuals and engaging video content for digital platforms",
-                linkedin: "https://linkedin.com/in/rajpatel",
-                email: "raj.patel@example.com",
+                image: "/team/Rajan.jpeg",
+                description:"Graphic designer and video editor focused on impactful visuals and engaging digital content.",
+                linkedin: "https://www.linkedin.com/in/rajan-yadav03/",
+                email: "rajanyadav97932@gmail.com",
               },
             ].map((member, index) => (
               <motion.div
@@ -611,8 +683,12 @@ export default function HomePage() {
                     <h3 className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">
                       {member.name}
                     </h3>
-                    <p className="text-primary font-semibold mb-4 text-base">{member.role}</p>
-                    <p className="text-muted-foreground leading-relaxed mb-6 min-h-[4rem]">{member.description}</p>
+                    <p className="text-primary font-semibold mb-4 text-base">
+                      {member.role}
+                    </p>
+                    <p className="text-muted-foreground leading-relaxed mb-6 min-h-[4rem]">
+                      {member.description}
+                    </p>
 
                     {/* Social Links */}
                     <div className="flex justify-center gap-4">
@@ -668,7 +744,9 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <h2 className="text-4xl lg:text-6xl font-bold mb-6">My Development Process</h2>
+            <h2 className="text-4xl lg:text-6xl font-bold mb-6">
+              My Development Process
+            </h2>
             <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
               A streamlined approach to delivering exceptional results
             </p>
@@ -715,8 +793,12 @@ export default function HomePage() {
                   </div>
                 </div>
                 <div className="flex-grow pt-2">
-                  <h3 className="text-2xl lg:text-3xl font-bold mb-3">{process.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed text-lg">{process.description}</p>
+                  <h3 className="text-2xl lg:text-3xl font-bold mb-3">
+                    {process.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed text-lg">
+                    {process.description}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -732,7 +814,9 @@ export default function HomePage() {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl lg:text-6xl font-bold mb-6">Client Testimonials</h2>
+          <h2 className="text-4xl lg:text-6xl font-bold mb-6">
+            Client Testimonials
+          </h2>
           <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed">
             What clients say about working with me
           </p>
@@ -802,10 +886,13 @@ export default function HomePage() {
           viewport={{ once: true }}
           className="text-center max-w-4xl mx-auto"
         >
-          <h2 className="text-4xl lg:text-6xl font-bold mb-8 text-balance">Let's Build Something Amazing Together</h2>
+          <h2 className="text-4xl lg:text-6xl font-bold mb-8 text-balance">
+            Let's Build Something Amazing Together
+          </h2>
           <p className="text-xl lg:text-2xl text-muted-foreground mb-12 text-pretty leading-relaxed">
-            I'm always interested in hearing about new projects and opportunities. Whether you need a new website, want
-            to improve an existing one, or have an innovative idea to bring to life.
+            I'm always interested in hearing about new projects and
+            opportunities. Whether you need a new website, want to improve an
+            existing one, or have an innovative idea to bring to life.
           </p>
           <Button asChild size="lg" className="text-lg px-10 py-7">
             <Link href="/contact">
@@ -816,5 +903,5 @@ export default function HomePage() {
         </motion.div>
       </section>
     </div>
-  )
+  );
 }
