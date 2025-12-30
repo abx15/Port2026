@@ -25,7 +25,7 @@ const interactiveLinks = [
     description: "Building scalable, performant web applications",
     color: "#ff4d2d",
     image: "/professional-web-developer-coding-modern-website-o.jpg",
-    bgImage: "/bg-web-dev.jpg",
+    bgImage: "/MainSkils/webDev.png",
   },
   {
     id: "ui-ux",
@@ -34,7 +34,7 @@ const interactiveLinks = [
     description: "Creating intuitive and beautiful user interfaces",
     color: "#e9a6b2",
     image: "/designer-working-on-ui-ux-design-with-tablet-and-s.jpg",
-    bgImage: "/bg-ui-ux.jpg",
+    bgImage: "/MainSkils/UiUx.png",
   },
   {
     id: "app-interfaces",
@@ -43,7 +43,7 @@ const interactiveLinks = [
     description: "Developing responsive mobile-first experiences",
     color: "#60a5fa",
     image: "/developer-testing-mobile-app-interface-on-smartpho.jpg",
-    bgImage: "/bg-app-interfaces.jpg",
+    bgImage: "/MainSkils/App.png",
   },
 ];
 
@@ -651,7 +651,8 @@ export default function HomePage() {
                 name: "Rajan Yadav",
                 role: "Graphic Designer & Video Editor",
                 image: "/team/Rajan.jpeg",
-                description:"Graphic designer and video editor focused on impactful visuals and engaging digital content.",
+                description:
+                  "Graphic designer and video editor focused on impactful visuals and engaging digital content.",
                 linkedin: "https://www.linkedin.com/in/rajan-yadav03/",
                 email: "rajanyadav97932@gmail.com",
               },
