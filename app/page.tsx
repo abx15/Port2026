@@ -6,6 +6,7 @@ import { ArrowRight, Code2, Palette, Smartphone, ExternalLink, Github, Briefcase
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
+import React from "@/public/icon/react.png"
 
 const interactiveLinks = [
   {
@@ -84,30 +85,34 @@ const featuredProjects = [
 
 const skillsData = {
   frontend: [
-    { name: "React", icon: "/skills/react.svg" },
-    { name: "TypeScript", icon: "/skills/typescript.svg" },
-    { name: "JavaScript", icon: "/skills/javascript.svg" },
-    { name: "Next.js", icon: "/skills/nextjs.svg" },
-    { name: "Tailwind CSS", icon: "/skills/tailwind.svg" },
-    { name: "HTML5", icon: "/skills/html5.svg" },
-    { name: "CSS3", icon: "/skills/css3.svg" },
-    { name: "Redux", icon: "/skills/redux.svg" },
+    { name: "React", icon: "/icon/react.png" },
+    { name: "TypeScript", icon: "/icon/typescript.webp" },
+    { name: "JavaScript", icon: "/icon/javascript.webp" },
+    { name: "Next.js", icon: "/icon/next.png" },
+    { name: "Tailwind CSS", icon: "/icon/tailwind.webp" },
+    { name: "HTML5", icon: "/icon/html.png" },
+    { name: "CSS3", icon: "/icon/css.png" },
+    { name: "Redux", icon: "/icon/redux.webp" },
+    { name: "Bootstrap", icon: "/icon/bootstrap.png" },
+    { name: "GSAP", icon: "/icon/gsap.png" },
+
   ],
   backend: [
-    { name: "Node.js", icon: "/skills/nodejs.svg" },
-    { name: "Express", icon: "/skills/express.svg" },
-    { name: "MongoDB", icon: "/skills/mongodb.svg" },
-    { name: "PostgreSQL", icon: "/skills/postgresql.svg" },
-    { name: "REST APIs", icon: "/skills/api.svg" },
-    { name: "GraphQL", icon: "/skills/graphql.svg" },
+    { name: "Node.js", icon: "/icon/nodeJs26.png" },
+    { name: "Express", icon: "/icon/express.png" },
+    { name: "MongoDB", icon: "/icon/mongo.webp" },
+    { name: "PostgreSQL", icon: "/icon/PostgreSQL.webp" },
+    { name: "REST APIs", icon: "/icon/REST APIs.png" },
+    { name: "GraphQL", icon: "/icon/GraphQL.png" },
+    { name: "PHP", icon: "/icon/php.png" },
   ],
   tools: [
-    { name: "Git", icon: "/skills/git.svg" },
-    { name: "GitHub", icon: "/skills/github.svg" },
-    { name: "VS Code", icon: "/skills/vscode.svg" },
-    { name: "Figma", icon: "/skills/figma.svg" },
-    { name: "Docker", icon: "/skills/docker.svg" },
-    { name: "Webpack", icon: "/skills/webpack.svg" },
+    { name: "Git", icon: "/icon/git.png" },
+    { name: "GitHub", icon: "/icon/github.png" },
+    { name: "VS Code", icon: "/icon/vscode.webp" },
+    { name: "Figma", icon: "/icon/figma.webp" },
+    { name: "Firebase", icon: "/icon/firebase.png" },
+    { name: "Appwrite", icon: "/icon/appwrite.png" },
   ],
 }
 

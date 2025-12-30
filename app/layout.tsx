@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://arunkumar.dev",
+    url: "https://arun15dev.netlify.app",
     title: "Arun Kumar - Frontend & Full Stack Developer",
     description: "Portfolio of Arun Kumar, a skilled Frontend and Full Stack React Developer",
     siteName: "Arun Kumar Portfolio",
