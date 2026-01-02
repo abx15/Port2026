@@ -1,56 +1,62 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Code2, Lightbulb, Rocket, Target } from "lucide-react"
-import { Card } from "@/components/ui/card"
+import { motion } from "framer-motion";
+import { Code2, Lightbulb, Rocket, Target } from "lucide-react";
+import { Card } from "@/components/ui/card";
 
 const values = [
   {
     icon: Code2,
     title: "Clean Code",
-    description: "Writing maintainable, scalable code that follows best practices and industry standards.",
+    description:
+      "Writing maintainable, scalable code that follows best practices and industry standards.",
   },
   {
     icon: Target,
     title: "Problem Solving",
-    description: "Analyzing complex challenges and delivering elegant, efficient solutions.",
+    description:
+      "Analyzing complex challenges and delivering elegant, efficient solutions.",
   },
   {
     icon: Lightbulb,
     title: "Continuous Learning",
-    description: "Staying updated with the latest technologies and development methodologies.",
+    description:
+      "Staying updated with the latest technologies and development methodologies.",
   },
   {
     icon: Rocket,
     title: "Performance Focus",
-    description: "Optimizing applications for speed, accessibility, and user experience.",
+    description:
+      "Optimizing applications for speed, accessibility, and user experience.",
   },
-]
+];
 
 const journey = [
   {
-    year: "2021",
-    title: "Started Web Development Journey",
-    description: "Began learning HTML, CSS, and JavaScript. Built first portfolio website and basic web projects.",
-  },
-  {
-    year: "2022",
-    title: "Mastered React & Modern Frontend",
+    year: "2024",
+    title: "Foundation in Web Development",
     description:
-      "Deep dive into React ecosystem, TypeScript, and modern frontend tooling. Started building complex applications.",
+      "Started web development with HTML5, CSS3, and JavaScript fundamentals. Built responsive static websites, practiced DOM manipulation, and created an early portfolio to showcase frontend basics.",
   },
   {
-    year: "2023",
-    title: "Full Stack Development",
+    year: "Early 2025",
+    title: "Modern Frontend & React Ecosystem",
     description:
-      "Expanded to backend technologies including Node.js, Express, and databases. Delivered complete full-stack solutions.",
+      "Transitioned to React.js with functional components, hooks, and component-driven architecture. Adopted Tailwind CSS for scalable UI, added TypeScript for type safety, and built real-world frontend projects like CivicPluse with animations and smooth UX.",
   },
   {
-    year: "2024-Present",
-    title: "Professional Developer",
-    description: "Working on production applications, contributing to open source, and mentoring junior developers.",
+    year: "Mid 2025",
+    title: "Full Stack & Backend Engineering",
+    description:
+      "Expanded into backend development using Node.js and Express. Implemented REST APIs, authentication with JWT, and database design using MongoDB and Firebase. Built full-stack platforms such as Medilink with secure data handling and role-based access.",
   },
-]
+  {
+    year: "Late 2025 – Present",
+    title: "Production-Ready Full Stack Developer",
+    description:
+      "Focused on building scalable, production-grade applications using the MERN stack. Worked with real deployments on Vercel and Render, integrated third-party services, followed Git/GitHub workflows, and continuously improved code quality and system design.",
+  },
+];
 
 export default function AboutPage() {
   return (
@@ -58,18 +64,30 @@ export default function AboutPage() {
       <section className="border-b border-border">
         <div className="container mx-auto px-6 lg:px-12 py-20 lg:py-32">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
-              <h1 className="text-5xl lg:text-7xl font-bold mb-8 text-balance">About Me</h1>
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <h1 className="text-5xl lg:text-7xl font-bold mb-8 text-balance">
+                About Me
+              </h1>
+
               <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
                 <p className="text-pretty">
-                  I'm a passionate Frontend and Full Stack Developer with over 4 years of experience creating
-                  exceptional web experiences. My journey in web development is driven by curiosity, creativity, and a
-                  commitment to continuous improvement.
+                  I am a Full Stack Web Developer with a strong foundation in
+                  both frontend and backend development. I began my backend
+                  journey with PHP and MySQL, which helped me understand core
+                  server-side concepts such as request handling, database
+                  design, and authentication from the ground up.
                 </p>
+
                 <p className="text-pretty">
-                  I specialize in building modern, responsive web applications using React, TypeScript, and the latest
-                  web technologies. My approach combines technical expertise with a deep understanding of user needs,
-                  resulting in products that are both powerful and intuitive.
+                  Over time, I transitioned to modern JavaScript-based stacks,
+                  specializing in React, TypeScript, and Tailwind CSS on the
+                  frontend, and Node.js, Express, and MongoDB on the backend. I
+                  focus on building scalable, maintainable applications with
+                  clean architecture, strong UX, and production-ready workflows.
                 </p>
               </div>
             </motion.div>
@@ -102,13 +120,17 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">What Drives Me</h2>
-            <p className="text-xl lg:text-2xl text-muted-foreground">Core principles that guide my work</p>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+              What Drives Me
+            </h2>
+            <p className="text-xl lg:text-2xl text-muted-foreground">
+              Core principles that guide my work
+            </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => {
-              const Icon = value.icon
+              const Icon = value.icon;
               return (
                 <motion.div
                   key={value.title}
@@ -122,10 +144,12 @@ export default function AboutPage() {
                       <Icon size={28} className="text-primary" />
                     </div>
                     <h3 className="text-xl font-bold mb-4">{value.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{value.description}</p>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {value.description}
+                    </p>
                   </Card>
                 </motion.div>
-              )
+              );
             })}
           </div>
         </div>
@@ -140,7 +164,9 @@ export default function AboutPage() {
           className="text-center mb-20"
         >
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">My Journey</h2>
-          <p className="text-xl lg:text-2xl text-muted-foreground">The path that shaped my skills</p>
+          <p className="text-xl lg:text-2xl text-muted-foreground">
+            The path that shaped my skills
+          </p>
         </motion.div>
 
         <div className="max-w-4xl mx-auto space-y-16">
@@ -154,9 +180,15 @@ export default function AboutPage() {
               className="relative pl-10 border-l-4 border-primary/40"
             >
               <div className="absolute -left-4 top-0 w-8 h-8 rounded-full bg-primary border-4 border-background shadow-lg" />
-              <div className="text-base font-bold text-primary mb-3 uppercase tracking-wide">{milestone.year}</div>
-              <h3 className="text-2xl lg:text-3xl font-bold mb-4">{milestone.title}</h3>
-              <p className="text-muted-foreground leading-relaxed text-lg">{milestone.description}</p>
+              <div className="text-base font-bold text-primary mb-3 uppercase tracking-wide">
+                {milestone.year}
+              </div>
+              <h3 className="text-2xl lg:text-3xl font-bold mb-4">
+                {milestone.title}
+              </h3>
+              <p className="text-muted-foreground leading-relaxed text-lg">
+                {milestone.description}
+              </p>
             </motion.div>
           ))}
         </div>
@@ -171,35 +203,58 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="max-w-4xl mx-auto"
           >
-            <h2 className="text-4xl lg:text-5xl font-bold mb-16 text-center">My Approach</h2>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-16 text-center">
+              My Approach
+            </h2>
+
             <div className="space-y-12 text-lg text-muted-foreground leading-relaxed">
               <div>
-                <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">User-Centered Design</h3>
+                <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
+                  Problem-First Development
+                </h3>
                 <p className="text-lg">
-                  Every project starts with understanding the end user. I prioritize creating interfaces that are
-                  intuitive, accessible, and delightful to use, ensuring that technology serves people, not the other
-                  way around.
+                  I start every project by clearly understanding the problem,
+                  the users, and the real-world constraints. Having worked on
+                  both PHP-based systems and modern MERN applications, I focus
+                  on building solutions that are practical, maintainable, and
+                  aligned with actual business or user needs.
                 </p>
               </div>
+
               <div>
-                <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">Scalable Architecture</h3>
+                <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
+                  Clean & Scalable Architecture
+                </h3>
                 <p className="text-lg">
-                  I build with the future in mind. My code is structured to grow with your needs, using modular
-                  patterns, clear documentation, and best practices that make maintenance and expansion straightforward.
+                  I design applications with scalability in mind, using modular
+                  components, reusable logic, and well-structured APIs. My
+                  backend experience with PHP, Node.js, and MongoDB helps me
+                  write code that is easy to extend, debug, and scale as the
+                  product grows.
                 </p>
               </div>
+
               <div>
-                <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">Performance Optimization</h3>
+                <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
+                  Performance & UX Focus
+                </h3>
                 <p className="text-lg">
-                  Speed matters. I optimize every aspect of the applications I build—from code splitting and lazy
-                  loading to efficient state management and database queries—to deliver fast, responsive experiences.
+                  I pay close attention to performance and user experience. From
+                  optimizing React renders and animations to efficient API calls
+                  and database queries, I ensure applications feel fast, smooth,
+                  and reliable on real devices and networks.
                 </p>
               </div>
+
               <div>
-                <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">Continuous Improvement</h3>
+                <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
+                  Continuous Learning & Iteration
+                </h3>
                 <p className="text-lg">
-                  The web evolves rapidly, and so do I. I stay current with emerging technologies, refine my skills
-                  through regular learning, and apply new knowledge to deliver cutting-edge solutions.
+                  I actively improve my skills by building real projects,
+                  reviewing my own code, and adapting to new tools and best
+                  practices. Each project teaches me how to deliver cleaner,
+                  more robust, and production-ready software.
                 </p>
               </div>
             </div>
@@ -207,5 +262,5 @@ export default function AboutPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }
