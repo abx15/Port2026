@@ -82,8 +82,8 @@ arun-kumar-portfolio/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/abx15/arun-kumar-portfolio.git
-   cd arun-kumar-portfolio
+   git clone https://github.com/abx15/Port2026.git
+   cd Port2026
    ```
 
 2. **Install dependencies**
@@ -208,7 +208,7 @@ This project is open source and available under the [MIT License](LICENSE).
 **Arun Kumar Bind**
 - **Email**: developerarunwork@gmail.com
 - **LinkedIn**: [linkedin.com/in/arun-kumar-a3b047353](https://www.linkedin.com/in/arun-kumar-a3b047353/)
-- **Portfolio**: [arunkumar.dev](https://arunkumar.dev)
+- **Portfolio**: [Arun Kumar Bind](https://arun15dev.netlify.app)
 
 ## 🙏 Acknowledgments
 
