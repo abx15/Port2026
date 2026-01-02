@@ -1,41 +1,63 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { ExternalLink, Github } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
+import { motion } from "framer-motion";
+import { ExternalLink, Github } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
+    title: "Medilink Health Tracker",
     description:
-      "A comprehensive e-commerce solution featuring real-time inventory management, secure payment processing with Stripe, and an intuitive admin dashboard. Built with modern React patterns and optimized for performance.",
-    problem: "Small businesses needed an affordable, scalable online store solution",
-    solution: "Created a full-stack platform with inventory tracking, payment integration, and analytics",
-    tech: ["React", "TypeScript", "Node.js", "MongoDB", "Stripe", "Tailwind CSS"],
-    demo: "#",
-    github: "#",
-    category: "Full Stack",
-    image: "/modern-ecommerce-platform-interface-dashboard.jpg",
+      "A comprehensive digital health management platform that allows users to securely store, track, and manage their medical records in one place. Features include user authentication, health card generation, notifications, and role-based access for doctors and admins. Built with modern full-stack technologies and optimized for scalability and security.",
+
+    problem:
+      "Patients and healthcare providers faced difficulties managing medical records securely and accessing them efficiently across different platforms.",
+
+    solution:
+      "Developed a centralized full-stack health tracking system with secure authentication, structured medical records, and real-time access for authorized users.",
+
+    tech: [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "JWT Authentication",
+      "Tailwind CSS",
+    ],
+
+    demo: "https://medilink-sooty.vercel.app/",
+    github: "https://github.com/abx15/medilink",
+    category: "Full Stack MERN",
+    image: "/projects/medilink.png",
   },
   {
-    title: "Task Management App",
+    title: "CivicPluse – City Issue Reporting Platform",
     description:
-      "A collaborative task management application with real-time updates, team workflows, and project tracking. Features drag-and-drop interface, notifications, and team collaboration tools.",
-    problem: "Teams needed a simple yet powerful tool for project coordination",
-    solution: "Built a real-time collaborative app with intuitive UI and team features",
+      "A civic engagement web platform that enables citizens to report local issues such as road damage, water supply problems, sanitation, and public safety concerns. The platform provides real-time status updates, issue tracking, and an intuitive user interface to improve communication between citizens and authorities.",
+
+    problem:
+      "Citizens lacked a centralized and transparent system to report civic issues and track their resolution status efficiently.",
+
+    solution:
+      "Developed a user-friendly platform where users can report issues, view updates in real time, and monitor progress, improving accountability and civic participation.",
+
     tech: ["React", "TypeScript", "Firebase", "Tailwind CSS", "Framer Motion"],
-    demo: "#",
-    github: "#",
+
+    demo: "https://civic-pluse.vercel.app/",
+    github: "https://github.com/abx15/civic-pluse",
     category: "Frontend",
-    image: "/project2.png",
+    image: "/projects/civicpluse.png",
   },
   {
     title: "Analytics Dashboard",
     description:
       "An interactive data visualization dashboard with customizable charts, real-time metrics, and comprehensive reporting. Designed for business intelligence and data-driven decision making.",
-    problem: "Companies struggled to visualize and understand their business data",
-    solution: "Developed an interactive dashboard with custom charts and data exports",
+    problem:
+      "Companies struggled to visualize and understand their business data",
+    solution:
+      "Developed an interactive dashboard with custom charts and data exports",
     tech: ["React", "TypeScript", "D3.js", "Express", "PostgreSQL", "Redux"],
     demo: "#",
     github: "#",
@@ -47,7 +69,8 @@ const projects = [
     description:
       "A recipe discovery platform with advanced search filters, meal planning features, and nutritional information. Integrates with multiple recipe APIs for diverse content.",
     problem: "Users needed an easy way to discover and organize recipes",
-    solution: "Created a searchable recipe app with filters, favorites, and meal planning",
+    solution:
+      "Created a searchable recipe app with filters, favorites, and meal planning",
     tech: ["React", "Next.js", "API Integration", "Tailwind CSS"],
     demo: "#",
     github: "#",
@@ -70,7 +93,8 @@ const projects = [
     title: "Social Media Dashboard",
     description:
       "A unified social media management dashboard for scheduling posts, tracking analytics, and managing multiple accounts. Supports major social platforms.",
-    problem: "Content creators needed to manage multiple social accounts efficiently",
+    problem:
+      "Content creators needed to manage multiple social accounts efficiently",
     solution: "Developed a centralized dashboard with scheduling and analytics",
     tech: ["React", "Node.js", "Express", "MongoDB", "OAuth", "REST APIs"],
     demo: "#",
@@ -78,7 +102,7 @@ const projects = [
     category: "Full Stack",
     image: "/social-media-dashboard-interface-with-analytics.jpg",
   },
-]
+];
 
 export default function ProjectsPage() {
   return (
@@ -91,10 +115,13 @@ export default function ProjectsPage() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl"
           >
-            <h1 className="text-5xl lg:text-7xl font-bold mb-8 text-balance">Projects</h1>
+            <h1 className="text-5xl lg:text-7xl font-bold mb-8 text-balance">
+              Projects
+            </h1>
             <p className="text-lg text-muted-foreground leading-relaxed text-pretty">
-              A collection of projects showcasing my expertise in frontend and full-stack development. Each project
-              represents a unique challenge and demonstrates modern web development practices.
+              A collection of projects showcasing my expertise in frontend and
+              full-stack development. Each project represents a unique challenge
+              and demonstrates modern web development practices.
             </p>
           </motion.div>
         </div>
@@ -130,16 +157,26 @@ export default function ProjectsPage() {
                     {project.title}
                   </h2>
 
-                  <p className="text-muted-foreground mb-8 leading-relaxed text-lg">{project.description}</p>
+                  <p className="text-muted-foreground mb-8 leading-relaxed text-lg">
+                    {project.description}
+                  </p>
 
                   <div className="space-y-5 mb-8">
                     <div>
-                      <h3 className="text-sm font-bold text-foreground mb-2 uppercase tracking-wide">Problem</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{project.problem}</p>
+                      <h3 className="text-sm font-bold text-foreground mb-2 uppercase tracking-wide">
+                        Problem
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {project.problem}
+                      </p>
                     </div>
                     <div>
-                      <h3 className="text-sm font-bold text-foreground mb-2 uppercase tracking-wide">Solution</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{project.solution}</p>
+                      <h3 className="text-sm font-bold text-foreground mb-2 uppercase tracking-wide">
+                        Solution
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {project.solution}
+                      </p>
                     </div>
                   </div>
 
@@ -155,7 +192,12 @@ export default function ProjectsPage() {
                   </div>
 
                   <div className="flex gap-4 mt-auto">
-                    <Button asChild variant="default" size="lg" className="flex-1">
+                    <Button
+                      asChild
+                      variant="default"
+                      size="lg"
+                      className="flex-1"
+                    >
                       <a
                         href={project.demo}
                         target="_blank"
@@ -166,7 +208,12 @@ export default function ProjectsPage() {
                         Live Demo
                       </a>
                     </Button>
-                    <Button asChild variant="outline" size="lg" className="flex-1 bg-transparent">
+                    <Button
+                      asChild
+                      variant="outline"
+                      size="lg"
+                      className="flex-1 bg-transparent"
+                    >
                       <a
                         href={project.github}
                         target="_blank"
@@ -185,5 +232,5 @@ export default function ProjectsPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }
