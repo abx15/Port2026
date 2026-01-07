@@ -34,7 +34,7 @@ export function Navigation() {
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-6 lg:px-12">
+      <div className="w-full px-6 lg:px-12">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center h-full">

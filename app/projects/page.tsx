@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import ContactForm from "@/components/contact-form";
 
 const projects = [
   {
@@ -108,7 +109,7 @@ export default function ProjectsPage() {
   return (
     <div className="pt-20">
       <section className="border-b border-border">
-        <div className="container mx-auto px-6 lg:px-12 py-20 lg:py-32">
+        <div className="w-full px-6 lg:px-12 py-20 lg:py-32">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -128,7 +129,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* Projects Grid - Enhanced cards with better hover effects */}
-      <section className="container mx-auto px-6 lg:px-12 py-24 lg:py-40">
+      <section className="w-full px-6 lg:px-12 py-24 lg:py-40">
         <div className="grid md:grid-cols-2 gap-10">
           {projects.map((project, index) => (
             <motion.div
@@ -229,6 +230,33 @@ export default function ProjectsPage() {
               </Card>
             </motion.div>
           ))}
+        </div>
+      </section>
+
+      {/* Contact Section - Full Width */}
+      <section className="w-full border-t border-border bg-muted/30">
+        <div className="w-full px-6 lg:px-12 py-24 lg:py-40">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl mx-auto"
+          >
+            {/* Section Header */}
+            <div className="text-center mb-16">
+              <h2 className="text-4xl lg:text-6xl font-bold mb-6">
+                Get in Touch
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                Have a project in mind or want to collaborate? Fill out the form
+                below and I'll get back to you as soon as possible.
+              </p>
+            </div>
+
+            {/* Contact Form */}
+            <ContactForm />
+          </motion.div>
         </div>
       </section>
     </div>

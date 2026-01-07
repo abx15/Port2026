@@ -1,12 +1,14 @@
-import Link from "next/link"
-import { Github, Linkedin, Mail } from "lucide-react"
+import Link from "next/link";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 export function Footer() {
   return (
     <footer className="bg-muted border-t border-border">
-      <div className="container mx-auto px-6 lg:px-12 py-12">
+      <div className="w-full px-6 lg:px-12 py-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="text-sm text-muted-foreground">© 2025 Arun Kumar. All rights reserved.</div>
+          <div className="text-sm text-muted-foreground">
+            © 2025 Arun Kumar. All rights reserved.
+          </div>
 
           <div className="flex items-center gap-6">
             <Link
@@ -38,5 +40,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

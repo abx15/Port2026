@@ -144,7 +144,7 @@ export default function HomePage() {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="container mx-auto px-6 lg:px-12 py-24 lg:py-40">
+      <section className="w-full px-6 lg:px-12 py-24 lg:py-40">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Left Content */}
           <motion.div
@@ -267,7 +267,7 @@ export default function HomePage() {
 
       {/* Stats Section */}
       <section className="bg-muted border-y border-border">
-        <div className="container mx-auto px-6 lg:px-12 py-20">
+        <div className="w-full px-6 lg:px-12 py-20">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {stats.map((stat, index) => (
               <motion.div
@@ -291,7 +291,7 @@ export default function HomePage() {
       </section>
 
       {/* Featured Projects Section */}
-      <section className="container mx-auto px-6 lg:px-12 py-24 lg:py-40">
+      <section className="w-full px-6 lg:px-12 py-24 lg:py-40">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -410,7 +410,7 @@ export default function HomePage() {
 
       {/* Skills Section */}
       <section className="bg-muted border-y border-border">
-        <div className="container mx-auto px-6 lg:px-12 py-24 lg:py-40">
+        <div className="w-full px-6 lg:px-12 py-24 lg:py-40">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -535,7 +535,7 @@ export default function HomePage() {
       </section>
 
       {/* Why Work With Me Section */}
-      <section className="container mx-auto px-6 lg:px-12 py-24 lg:py-40">
+      <section className="w-full px-6 lg:px-12 py-24 lg:py-40">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -612,7 +612,7 @@ export default function HomePage() {
 
       {/* Team Section */}
       <section className="bg-background">
-        <div className="container mx-auto px-6 lg:px-12 py-24 lg:py-40">
+        <div className="w-full px-6 lg:px-12 py-24 lg:py-40">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -738,7 +738,7 @@ export default function HomePage() {
 
       {/* Development Process Section */}
       <section className="bg-muted border-y border-border">
-        <div className="container mx-auto px-6 lg:px-12 py-24 lg:py-40">
+        <div className="w-full px-6 lg:px-12 py-24 lg:py-40">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -808,7 +808,7 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="container mx-auto px-6 lg:px-12 py-24 lg:py-40">
+      <section className="w-full px-6 lg:px-12 py-24 lg:py-40">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -880,7 +880,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="container mx-auto px-6 lg:px-12 py-24 lg:py-40">
+      <section className="w-full px-6 lg:px-12 py-24 lg:py-40">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

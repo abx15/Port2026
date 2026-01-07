@@ -62,7 +62,7 @@ export default function AboutPage() {
   return (
     <div className="pt-20">
       <section className="border-b border-border">
-        <div className="container mx-auto px-6 lg:px-12 py-20 lg:py-32">
+        <div className="w-full px-6 lg:px-12 py-20 lg:py-32">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -113,7 +113,7 @@ export default function AboutPage() {
 
       {/* Values Section */}
       <section className="bg-muted border-y border-border">
-        <div className="container mx-auto px-6 lg:px-12 py-24 lg:py-40">
+        <div className="w-full px-6 lg:px-12 py-24 lg:py-40">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -156,7 +156,7 @@ export default function AboutPage() {
       </section>
 
       {/* Journey Timeline */}
-      <section className="container mx-auto px-6 lg:px-12 py-24 lg:py-40">
+      <section className="w-full px-6 lg:px-12 py-24 lg:py-40">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -196,7 +196,7 @@ export default function AboutPage() {
 
       {/* Approach Section */}
       <section className="bg-muted border-y border-border">
-        <div className="container mx-auto px-6 lg:px-12 py-24 lg:py-40">
+        <div className="w-full px-6 lg:px-12 py-24 lg:py-40">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
