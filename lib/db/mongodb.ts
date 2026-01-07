@@ -32,6 +32,7 @@ async function connectDB() {
         const opts = {
             bufferCommands: false,
             serverSelectionTimeoutMS: 10000, // Timeout after 10 seconds
+            family: 4, // Force IPv4 (resolves many local connection issues)
         };
 
         console.log('⏳ Connecting to MongoDB...');

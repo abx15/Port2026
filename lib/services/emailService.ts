@@ -12,8 +12,8 @@ interface ContactEmailData {
 
 // Create reusable transporter
 const createTransporter = () => {
-    const emailUser = process.env.EMAIL_USER;
-    const emailPassword = process.env.EMAIL_PASSWORD;
+    const emailUser = process.env.EMAIL_USER?.trim();
+    const emailPassword = process.env.EMAIL_PASSWORD?.trim();
 
     if (!emailUser || !emailPassword) {
         throw new Error(
@@ -30,8 +30,10 @@ const createTransporter = () => {
             pass: emailPassword,
         },
         tls: {
-            // Do not fail on invalid certs (common on some Windows/Local setups)
+            // Do not fail on invalid certs
             rejectUnauthorized: false,
+            // Modern ciphers
+            minVersion: 'TLSv1.2'
         },
     });
 };
@@ -42,6 +44,7 @@ const createTransporter = () => {
 export async function sendContactNotification(
     contactData: ContactEmailData
 ): Promise<{ success: boolean; error?: string }> {
+    console.log('📧 sendContactNotification triggered for:', contactData.email);
     try {
         const transporter = createTransporter();
         const adminEmail = process.env.ADMIN_EMAIL || process.env.EMAIL_USER;
