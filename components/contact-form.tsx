@@ -155,12 +155,7 @@ export default function ContactForm() {
               description: "We'll get back to you soon.",
               duration: 5000,
             });
-
-            // Reset form after 2 seconds
-            setTimeout(() => {
-              reset();
-              setIsSuccess(false);
-            }, 2000);
+            reset();
           } catch (error) {
             console.error("Payment verification error:", error);
             toast.error("Payment verification failed", {
@@ -220,12 +215,7 @@ export default function ContactForm() {
           description: "Thank you for reaching out. We'll respond soon.",
           duration: 5000,
         });
-
-        // Reset form after 2 seconds
-        setTimeout(() => {
-          reset();
-          setIsSuccess(false);
-        }, 2000);
+        reset();
 
         setIsSubmitting(false);
       }
@@ -238,6 +228,32 @@ export default function ContactForm() {
       setIsSubmitting(false);
     }
   };
+
+  if (isSuccess) {
+    return (
+      <div className="w-full h-[600px] flex flex-col items-center justify-center text-center p-8 space-y-6 bg-gradient-to-br from-primary/5 via-primary/10 to-transparent rounded-2xl border-2 border-primary/20 animate-in fade-in zoom-in duration-500">
+        <div className="w-24 h-24 rounded-full bg-green-500/20 flex items-center justify-center mb-4">
+          <CheckCircle2 className="w-12 h-12 text-green-500" />
+        </div>
+        <h3 className="text-3xl font-bold tracking-tight">
+          Payment Successful!
+        </h3>
+        <p className="text-muted-foreground text-lg max-w-md">
+          Thank you for your payment and message. We have received your details
+          and will get back to you shortly.
+        </p>
+        <div className="pt-6">
+          <Button
+            onClick={() => setIsSuccess(false)}
+            variant="outline"
+            className="min-w-[200px] border-2 hover:bg-primary hover:text-primary-foreground transition-all"
+          >
+            Send Another Message
+          </Button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="w-full">
