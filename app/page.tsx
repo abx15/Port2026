@@ -12,6 +12,7 @@ import {
   Briefcase,
   Award,
   Users,
+  Download,
 } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -200,13 +201,29 @@ export default function HomePage() {
               })}
             </div>
 
-            {/* CTA Button */}
-            <div className="pt-4">
+            {/* CTA Buttons */}
+            <div className="pt-4 flex flex-col sm:flex-row gap-4">
               <Button asChild size="lg" className="text-lg px-8 py-6">
                 <Link href="/contact">
                   Let's Work Together
                   <ArrowRight className="ml-2" size={18} />
                 </Link>
+              </Button>
+
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="text-lg px-8 py-6 bg-transparent border-2"
+              >
+                <a
+                  href="/resume/ArunKumarBindFulStackMern.pdf"
+                  download="Arun_Kumar_Resume.pdf"
+                  className="flex items-center"
+                >
+                  Download Resume
+                  <Download className="ml-2" size={18} />
+                </a>
               </Button>
             </div>
           </motion.div>
