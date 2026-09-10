@@ -23,13 +23,13 @@ export const metadata: Metadata = {
     "Web Development",
     "Arun Kumar",
   ],
-  authors: [{ name: "Arun Kumar" }],
+  authors: [{ name: "Arun Kumar Bind" }],
   creator: "Arun Kumar",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://arun15dev.netlify.app",
-    title: "Arun Kumar - Frontend & Full Stack Developer",
+    title: "Arun Kumar - SoftwareDeveloper",
     description:
       "Portfolio of Arun Kumar, a skilled Frontend and Full Stack React Developer",
     siteName: "Arun Kumar Portfolio",
