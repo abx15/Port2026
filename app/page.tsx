@@ -159,9 +159,9 @@ export default function HomePage() {
                 Hi, I'm Arun Kumar
               </p>
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight text-balance">
-                FRONTEND & FULL STACK
+               Software
                 <br />
-                <span className="text-muted-foreground">WEB DEVELOPER</span>
+                <span className="text-muted-foreground"> Developer</span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed max-w-xl">
                 Building modern, scalable, and user-focused web applications
